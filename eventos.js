@@ -127,9 +127,11 @@ function atualizarLista() {
                         <td>${cadanome.numero}</td>
                         <td>
                             <button onclick="buscarParaEditar(${cadanome.id})" data-bs-toggle="offcanvas" data-bs-target="#offcanvasEditar" class="btn btn-outline-warning btn-sm">
+                            <i class="material-icons">edit</i>
                                 Editar
                             </button>
                             <button onclick="excluir(${cadanome.id})" class="btn btn-outline-danger btn-sm">
+                            <i class="material-icons">close</i>
                                 Excluir
                             </button>
                         </td>

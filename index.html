@@ -5,7 +5,13 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Agenda</title>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap" rel="stylesheet">
         <!-- CSS only -->
+        <link rel="stylesheet" href="estilo.css">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
         
     </head>
@@ -17,16 +23,17 @@
         <!-- Button trigger modal -->
         <div class="row">
             <div class="col">
-                <input id="input_busca" onkeyup="filtrar()" type="text" class="form-control" placeholder="Buscar">
+                <input id="input_busca" onkeyup="filtrar()" type="text" class="form-control" placeholder="Buscar"  >
             </div>
-
             <div class="col text-end">
-                <button onclick="excluirSelecionados()" id="btn_remove_all" class="btn btn-outline-danger d-none">
+                <button onclick="excluirSelecionados()" id="btn_remove_all" class="btn btn-outline-danger d-none" >
                     Excluir selecionado(s)
+                    <i class="material-icons">delete</i>
                 </button>
 
                 <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     Novo Contato
+                    <i class="material-icons">add</i>
                 </button>
             </div>
         </div>
@@ -75,8 +82,12 @@
                             >
                         </div>
                         <div class="modal-footer text-bg-dark">
-                            <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Cancelar</button>
-                            <button type="submit" class="btn btn-outline-primary">Aceitar</button>
+                            <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Cancelar
+                                <i class="material-icons">close</i>
+                            </button>
+                            <button type="submit" class="btn btn-outline-primary">Aceitar
+                                <i class="material-icons">add</i>
+                            </button>
                         </div>
                     </form>
 
@@ -105,7 +116,9 @@
                     <input onkeypress="return onlynumber()" type="text" id="input_editar_numero" class="form-control mb-3" maxlength="11" placeholder="99999999999">
 
                     <div class="d-grid">
-                        <button class="btn btn-outline-primary">Enviar</button>
+                        <button class="btn btn-outline-primary">Enviar
+                            <i class="material-icons">add</i>
+                        </button>
                     </div>
               </form>
             </div>
