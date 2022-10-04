@@ -4,7 +4,6 @@ function onlynumber(evt) {
     var theEvent = evt || window.event;
     var key = theEvent.keyCode || theEvent.which;
     key = String.fromCharCode( key );
-    //var regex = /^[0-9.,]+$/;
     var regex = /^[0-9.]+$/;
     if( !regex.test(key) ) {
        theEvent.returnValue = false;
@@ -15,7 +14,6 @@ function onlynumber(evt) {
     var theEvent = evt || window.event;
     var key = theEvent.keyCode || theEvent.which;
     key = String.fromCharCode( key );
-    //var regex = /^[0-9.,]+$/;
     var regex = /^[0-9.]+$/;
     if( !regex.test(key) ) {
        theEvent.returnValue = false;
@@ -41,7 +39,7 @@ function marcarTodos() {
 function buscarParaEditar(id) {
     input_editar_id.value = id;
 
-    fetch(API_URL+'/agenda/'+id) //http://localhost:8000/agenda/4
+    fetch(API_URL+'/agenda/'+id) 
         .then(res => res.json())
         .then(dados => {
             input_editar_nome.value = dados.nome;
@@ -51,9 +49,9 @@ function buscarParaEditar(id) {
 
 
 function editar() {
-    event.preventDefault(); //impedindo a pagina de dar refresh
+    event.preventDefault(); 
 
-    //recuperando os dados do formulario
+   
     let dados = {
         nome: input_editar_nome.value,
         numero: input_editar_numero.value,
@@ -99,9 +97,9 @@ function inserir() {
 
 
 async function excluir (id) {
-    let resposta = confirm('Vc tem certeza?');
+    let resposta = confirm('Tem certeza?');
 
-    if (resposta !== true) { //historia sopa de pedras
+    if (resposta !== true) { 
         return;
     }
 
@@ -128,10 +126,10 @@ function atualizarLista() {
                         <td>${cadanome.nome}</td>
                         <td>${cadanome.numero}</td>
                         <td>
-                            <button onclick="buscarParaEditar(${cadanome.id})" data-bs-toggle="offcanvas" data-bs-target="#offcanvasEditar" class="btn btn-warning btn-sm">
+                            <button onclick="buscarParaEditar(${cadanome.id})" data-bs-toggle="offcanvas" data-bs-target="#offcanvasEditar" class="btn btn-outline-warning btn-sm">
                                 Editar
                             </button>
-                            <button onclick="excluir(${cadanome.id})" class="btn btn-danger btn-sm">
+                            <button onclick="excluir(${cadanome.id})" class="btn btn-outline-danger btn-sm">
                                 Excluir
                             </button>
                         </td>
